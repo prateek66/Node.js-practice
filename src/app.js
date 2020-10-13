@@ -4,6 +4,7 @@ const express = require('express')
 const geocode = require('./util/geocode')
 const forecast = require('./util/forecast')
 const app =express()
+const port = process.env.PORT || 8080
 
 console.log(__dirname) //to show path of this dir.
 const add = path.join(__dirname,'../public')   //to join dirname to public
@@ -80,7 +81,7 @@ app.get('/weather',(req,res) =>{
 })                                                  //and we can also send parsed json as response **express automatically parsed our object into json
 
 
-app.listen(8080, () =>{
-    console.log("server is running!!")  //this is to start the server on port 3000
+app.listen(port, () =>{
+    console.log("server is running!!" +port)  //this is to start the server on port 3000
 })
 
